@@ -22,6 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, "../public")))
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.render('home/index.ejs');
@@ -31,9 +32,22 @@ app.get('/login', (req,res) => {
   res.render('login/index.ejs')
 })
 
-app.get('/signup', (req,res) => {
-  res.render('signup/index.ejs')
+app.get('/register', (req,res) => {
+  res.render('signup/index.ejs',{ error : null})
 })
+
+app.post('/user/register', (req, res) => {
+
+    res.redirect('/login')
+
+});
+
+
+app.post('/user/login', (req, res) => {
+
+  res.redirect('/')
+
+});
 
 app.get('/modelofproduct', (req, res) => {
   // res.send('Welcome to the new page!');
@@ -45,7 +59,7 @@ app.post('/modelofproduct/search', async (req, res) => {
   const { itemName, itemType, make, model } = req.body;
 
   if (!itemName || !itemType || !make || !model) {
-    return res.status(400).render('index', { error: 'All fields are required', products: [] });
+     res.render('modelofproduct/index.ejs', { error: 'All fields are required', products: [] });
   }
 
   try {

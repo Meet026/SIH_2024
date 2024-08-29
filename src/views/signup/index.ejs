@@ -123,8 +123,11 @@
             <label for="signupPassword" class="form-label">Password</label>
             <input type="password" class="form-control" id="signupPassword" name="password" placeholder="Enter your password">
           </div>
+          <% if (error) { %>
+            <p style="color: red;"><%= error %></p>
+          <% } %>
           <button type="submit" class="btn btn-primary">Sign Up</button>
-          <div class="creative-link">Already have an account? <a href="../login/index.ejs">Login</a></div>
+          <div class="creative-link">Already have an account? <a href="/login">Login</a></div>
         </form>
       </div>
     </section>

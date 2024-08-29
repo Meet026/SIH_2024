@@ -28,9 +28,8 @@ const registerUser = asyncHandler( async (req, res) => {
     const { email, username, password } = req.body
 
     if([email, username, password].some((field) => field?.trim()=== "")){
-        return res.status(400).json(
-            new ApiResponse(400, "all field are required")
-        )
+        return res.status(400).send("All fields are required")
+        
     }
 
     const existedUser = await User.findOne({
@@ -38,9 +37,7 @@ const registerUser = asyncHandler( async (req, res) => {
     })
 
     if(existedUser){
-        return res.status(400).json(
-            new ApiResponse(400, "user with username or email already exist")
-        )
+        res.redirect('/login');
     }
 
      const user = await User.create({
@@ -68,30 +65,30 @@ const loginUser = asyncHandler(async (req, res) => {
     const {email, password} = req.body
 
     console.log(email, password);
-    if(!(email || password)){
-        return res.status(400).json(
-            new ApiResponse(400, "username and password is required")
-        )
-    }
+    // if(!(email || password)){
+    //     return res.status(400).json(
+    //         new ApiResponse(400, "username and password is required")
+    //     )
+    // }
 
 
     const user = await User.findOne({
         $or : [{ email }]
     })
 
-    if(!user){
-        return res.status(400).json(
-            new ApiResponse(400, "user with this email doesn't exist")
-        )
-    }
+    // if(!user){
+    //     return res.status(400).json(
+    //         new ApiResponse(400, "user with this email doesn't exist")
+    //     )
+    // }
 
     const isPasswordValid = await user.isPasswordCorrect(password)
 
-    if(!isPasswordValid){
-        return res.status(500).json(
-            new ApiResponse(400, "password is incorrect")
-        )
-    }
+    // if(!isPasswordValid){
+    //     return res.status(500).json(
+    //         new ApiResponse(400, "password is incorrect")
+    //     )
+    // }
 
     const {accessToken, refreshToken} = await generateAccessAndrefreshToken(user._id)
 
