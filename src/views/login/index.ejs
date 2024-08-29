@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Poppins:wght@100;400;700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +30,49 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    /* Insert the CSS here */
+    .error {
+      color: #ff4d4f;
+      background-color: #fff1f0;
+      border: 1px solid #ff4d4f;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .success {
+  color: #28a745;              /* Green color to indicate success */
+  background-color: #d4edda;   /* Light green background */
+  border: 1px solid #c3e6cb;   /* Green border */
+  padding: 10px;               /* Padding around the success message */
+  margin-bottom: 15px;         /* Space below each success message */
+  border-radius: 5px;          /* Rounded corners */
+  font-size: 14px;             /* Font size for the success text */
+}
+
+/* Optional: styling for the list items in the success message */
+.success ul {
+  list-style-type: none;       /* Remove bullet points */
+  padding-left: 0;             /* Remove left padding */
+}
+
+.success li {
+  margin-bottom: 5px;          /* Space between list items */
+}
+.close-btn {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.close-btn:hover {
+  color: #155724; /* Darker green on hover */
+}
+  </style>
 </head>
 
 <body class="index-page">
@@ -52,7 +97,8 @@
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>
@@ -89,7 +135,8 @@
 
       </div>
 
-      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28 " preserveAspectRatio="none">
         <defs>
           <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
         </defs>
@@ -105,22 +152,45 @@
       </svg>
 
     </section><!-- /Hero Section -->
-
+    <% if (successMessages.length > 0) { %>
+      <div class="success">
+        <ul>
+          <% successMessages.forEach(function(message) { %>
+            <li><%= message %></li>
+          <% }); %>
+        </ul>
+        <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+      </div>
+    <% } %>
     <!-- Login Section -->
     <section class="login-section">
       <div class="login-card">
+        
         <h3>Login</h3>
+        
         <form action="user/login" method="POST">
           <div class="mb-3">
             <label for="loginEmail" class="form-label">Email Address</label>
             <input type="email" class="form-control" id="loginEmail" name="email" placeholder="Enter your email">
+
           </div>
-          <div class="mb-3">
-            <label for="loginPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Enter your password">
-          </div>
-          <button type="submit" class="btn btn-primary">Login</button>
-          <div class="creative-link">Don't have an account? <a href="/register">Sign Up</a></div>
+          <% if (errors.email) { %>
+            <div class="error">
+              <%= errors.email %>
+            </div>
+            <% } %>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" name="password"
+                  placeholder="Enter your password">
+              </div>
+              <% if (errors.password) { %>
+                <div class="error">
+                  <%= errors.password %>
+                </div>
+                <% } %>
+                  <button type="submit" class="btn btn-primary">Login</button>
+                  <div class="creative-link">Don't have an account? <a href="/register">Sign Up</a></div>
         </form>
       </div>
     </section>
@@ -166,7 +236,8 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+              data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -219,7 +290,8 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

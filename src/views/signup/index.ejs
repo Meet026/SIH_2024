@@ -28,6 +28,18 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    /* Insert the CSS here */
+    .error {
+      color: #ff4d4f;
+      background-color: #fff1f0;
+      border: 1px solid #ff4d4f;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -110,21 +122,30 @@
     <section class="signup-section">
       <div class="signup-card">
         <h3>Sign Up</h3>
+        
+  
+     
         <form action="user/register" method="POST">
           <div class="mb-3">
             <label for="signupUsername" class="form-label">Username</label>
-            <input type="text" class="form-control" id="signupUsername" name="username" placeholder="Enter your username">
+            <input type="text" class="form-control" id="signupUsername" name="username"  placeholder="Enter your username">
           </div>
+          <% if (errors.username) { %>
+            <div class="error"><%= errors.username %></div>
+          <% } %>
           <div class="mb-3">
             <label for="signupEmail" class="form-label">Email Address</label>
             <input type="email" class="form-control" id="signupEmail" name="email" placeholder="Enter your email">
           </div>
+          <% if (errors.email) { %>
+            <div class="error"><%= errors.email %></div>
+          <% } %>
           <div class="mb-3">
             <label for="signupPassword" class="form-label">Password</label>
             <input type="password" class="form-control" id="signupPassword" name="password" placeholder="Enter your password">
           </div>
-          <% if (error) { %>
-            <p style="color: red;"><%= error %></p>
+          <% if (errors.password) { %>
+            <div class="error"><%= errors.password %></div>
           <% } %>
           <button type="submit" class="btn btn-primary">Sign Up</button>
           <div class="creative-link">Already have an account? <a href="/login">Login</a></div>
