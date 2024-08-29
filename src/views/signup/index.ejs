@@ -113,15 +113,15 @@
         <form action="user/register" method="POST">
           <div class="mb-3">
             <label for="signupUsername" class="form-label">Username</label>
-            <input type="text" class="form-control" id="signupUsername" name="username" placeholder="Enter your username">
+            <input type="text" class="form-control" id="signupUsername" name="username" placeholder="Enter your username" required>
           </div>
           <div class="mb-3">
             <label for="signupEmail" class="form-label">Email Address</label>
-            <input type="email" class="form-control" id="signupEmail" name="email" placeholder="Enter your email">
+            <input type="email" class="form-control" id="signupEmail" name="email" placeholder="Enter your email" required>
           </div>
           <div class="mb-3">
             <label for="signupPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="signupPassword" name="password" placeholder="Enter your password">
+            <input type="password" class="form-control" id="signupPassword" name="password" placeholder="Enter your password" required>
           </div>
           <% if (error) { %>
             <p style="color: red;"><%= error %></p>

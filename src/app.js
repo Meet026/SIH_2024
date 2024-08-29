@@ -94,4 +94,3 @@ connectDB()
       console.log("Error : ", error);
   }
 })
-
