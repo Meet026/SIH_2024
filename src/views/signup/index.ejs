@@ -133,14 +133,14 @@
           <% } %>
           <div class="mb-3">
             <label for="signupEmail" class="form-label">Email Address</label>
-            <input type="email" class="form-control" id="signupEmail" name="email" placeholder="Enter your email" required>
+            <input type="email" class="form-control" id="signupEmail" name="email" placeholder="Enter your email" >
           </div>
           <% if (errors.email) { %>
             <div class="error"><%= errors.email %></div>
           <% } %>
           <div class="mb-3">
             <label for="signupPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="signupPassword" name="password" placeholder="Enter your password" required>
+            <input type="password" class="form-control" id="signupPassword" name="password" placeholder="Enter your password" >
           </div>
           <% if (errors.password) { %>
             <div class="error"><%= errors.password %></div>
