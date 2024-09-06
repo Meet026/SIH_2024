@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Search</title>
+    <title>Product Specification</title>
     <style>
       /* Header Styles */
       .header {
@@ -87,38 +87,8 @@
         background-color: #d55b0b; /* Darker shade of orange for hover effect */
       }
 
-      .product-item {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        display: inline-block;
-        width: 250px;
-        text-align: left;
-      }
-
-      .product-item h2 {
-        font-size: 18px;
-        margin: 0 0 10px 0;
-      }
-
-      .product-item p {
-        font-size: 14px;
-        color: #666;
-      }
-
-      a {
-        color: #337ab7;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      p {
-        font-size: 14px;
+      .specification-group {
+        margin-bottom: 10px;
       }
     </style>
 </head>
@@ -130,30 +100,56 @@
 
   <!-- Main Content -->
   <main>
-    <h1>Product Search</h1>
+    <!-- Product Specification Form -->
+    <h1>Product Specification</h1>
+    
+    <form id="specForm">
+      <input type="text" name="specName" placeholder="Specification Name" required>
+      <input type="text" name="specValue" placeholder="Specification Value" required>
 
-    <form action="/modelofproduct/search" method="POST">
-      <input type="text" name="itemName" placeholder="Item Name" required>
-      <input type="text" name="itemType" placeholder="Item Type" required>
-      <input type="text" name="make" placeholder="Make" required>
-      <input type="text" name="model" placeholder="Model" required>
-      <button type="submit">Search</button>
-    </form>
-
-    <% if (error) { %>
-      <p style="color: red;"><%= error %></p>
-    <% } %>
-
-    <% if (products) { %>
-      <h2>Search Results:</h2>
-      <% products.forEach(product => { %>
-        <div class="product-item">
-          <h2><%= product.title %></h2>
-          <p>Price: <%= product.price %></p>
-          <a href="<%= product.image %>" target="_blank">View Product</a>
+      <!-- Specification fields will be added here dynamically -->
+      <div id="specificationContainer">
+        <div class="specification-group">
+          <input type="text" name="specification[]" placeholder="Specification Name" required>
+          <input type="text" name="value[]" placeholder="Specification Value" required>
         </div>
-      <% }) %>
-    <% } %>
+      </div>
+
+      <!-- Button to add more specifications -->
+      <button type="button" onclick="addSpecification()">Add More Specifications</button>
+      
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
   </main>
+
+  <script>
+    function addSpecification() {
+      // Create a new div to hold the specification input fields
+      const specGroup = document.createElement('div');
+      specGroup.className = 'specification-group';
+
+      // Create a new input field for the specification name
+      const specNameInput = document.createElement('input');
+      specNameInput.type = 'text';
+      specNameInput.name = 'specification[]';
+      specNameInput.placeholder = 'Specification Name';
+      specNameInput.required = true;
+
+      // Create a new input field for the specification value
+      const specValueInput = document.createElement('input');
+      specValueInput.type = 'text';
+      specValueInput.name = 'value[]';
+      specValueInput.placeholder = 'Specification Value';
+      specValueInput.required = true;
+
+      // Append the input fields to the div
+      specGroup.appendChild(specNameInput);
+      specGroup.appendChild(specValueInput);
+
+      // Add the new div to the specification container
+      document.getElementById('specificationContainer').appendChild(specGroup);
+    }
+  </script>
 </body>
 </html>

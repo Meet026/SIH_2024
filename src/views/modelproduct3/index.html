@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Search</title>
     <style>
+        
       /* Header Styles */
       .header {
         background-color: #404356;
@@ -19,8 +20,8 @@
         transition: all 1s;
       }
       .scrolled .header {
-        --background-color: rgba(42, 44, 57, 0.9);
-      }
+      --background-color: rgba(42, 44, 57, 0.9);
+}
 
       .header .sitename {
         margin: 0;
@@ -87,38 +88,8 @@
         background-color: #d55b0b; /* Darker shade of orange for hover effect */
       }
 
-      .product-item {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        display: inline-block;
-        width: 250px;
-        text-align: left;
-      }
-
-      .product-item h2 {
-        font-size: 18px;
-        margin: 0 0 10px 0;
-      }
-
-      .product-item p {
-        font-size: 14px;
-        color: #666;
-      }
-
-      a {
-        color: #337ab7;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      p {
-        font-size: 14px;
+      .description-group {
+        margin-bottom: 10px;
       }
     </style>
 </head>
@@ -130,30 +101,47 @@
 
   <!-- Main Content -->
   <main>
+    <!-- Product Search Form -->
     <h1>Product Search</h1>
-
-    <form action="/modelofproduct/search" method="POST">
+    
+    <form id="productForm">
       <input type="text" name="itemName" placeholder="Item Name" required>
       <input type="text" name="itemType" placeholder="Item Type" required>
-      <input type="text" name="make" placeholder="Make" required>
-      <input type="text" name="model" placeholder="Model" required>
+
+      <!-- Description fields will be added here dynamically -->
+      <div id="descriptionContainer">
+        <div class="description-group">
+          <input type="text" name="description[]" placeholder="Description" required>
+        </div>
+      </div>
+
+      <!-- Button to add more descriptions -->
+      <button type="button" onclick="addDescription()">Add More Descriptions</button>
+      
+      <br><br>
       <button type="submit">Search</button>
     </form>
-
-    <% if (error) { %>
-      <p style="color: red;"><%= error %></p>
-    <% } %>
-
-    <% if (products) { %>
-      <h2>Search Results:</h2>
-      <% products.forEach(product => { %>
-        <div class="product-item">
-          <h2><%= product.title %></h2>
-          <p>Price: <%= product.price %></p>
-          <a href="<%= product.image %>" target="_blank">View Product</a>
-        </div>
-      <% }) %>
-    <% } %>
   </main>
+
+  <script>
+    function addDescription() {
+      // Create a new div to hold the description input field
+      const descGroup = document.createElement('div');
+      descGroup.className = 'description-group';
+
+      // Create a new input field for the description
+      const descInput = document.createElement('input');
+      descInput.type = 'text';
+      descInput.name = 'description[]';
+      descInput.placeholder = 'Description';
+      descInput.required = true;
+
+      // Append the input field to the div
+      descGroup.appendChild(descInput);
+
+      // Add the new div to the description container
+      document.getElementById('descriptionContainer').appendChild(descGroup);
+    }
+  </script>
 </body>
 </html>
