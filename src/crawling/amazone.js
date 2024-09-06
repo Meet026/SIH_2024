@@ -47,12 +47,12 @@ export async function fetchAmazonProducts(itemName, make, model) {
 
       products = products.concat(pageProducts);
 
-      console.log(`Page ${currentPage} scraped, found ${pageProducts.length} products.`);
+      console.log(`amazone Page ${currentPage} scraped, found ${pageProducts.length} products.`);
 
       // Check if there's a "Next" button for pagination
       const hasNextPage = await page.evaluate(() => {
         const nextButton = document.querySelector('.s-pagination-next');
-        return nextButton && !nextButton.classList.contains('s-pagination-disabled');
+        return nextButton
       });
 
       if (!hasNextPage) {

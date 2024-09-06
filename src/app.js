@@ -4,7 +4,8 @@ import { fileURLToPath } from 'url';
 import connectDB from './db/index.js';
 import dotenv from "dotenv";
 import { fetchFlipkartProducts } from "./crawling/flipkart.js";
-import { fetchAmazonProducts } from "./crawling/amazone.js";
+import { fetchAmazonProducts } from './crawling/amazone.js';
+import { fetchIndiaMARTProducts } from './crawling/indiaMart.js';
 import flash from 'connect-flash';
 import session from 'express-session';
 
@@ -57,7 +58,6 @@ app.get('/register', (req,res) => {
 })
 
 app.post('/user/register', (req, res) => {
-  console.log(req.body)
   const {email, username, password} = req.body;
   const errors = {};
   if (!username) {
@@ -77,14 +77,10 @@ app.post('/user/register', (req, res) => {
     req.flash('success', "Sign up Succesfully");
     return res.redirect('/');
   }
-
-
 });
 
 
 app.post('/user/login', (req, res) => {
-
-
   const {email, password} = req.body;
   const errors = {};
  
@@ -102,9 +98,6 @@ app.post('/user/login', (req, res) => {
     req.flash('success', "Login up Succesfully");
     return res.redirect('/home');
   }
-
-
-
 });
 
 app.get('/modelofproduct', (req, res) => {
@@ -122,13 +115,14 @@ app.post('/modelofproduct/search', async (req, res) => {
 
   try {
     // Fetch products from both Amazon and Flipkart concurrently
-    const [amazonProducts, flipkartProducts] = await Promise.all([
+    const [amazonProducts, flipkartProducts, indiaMartProducts] = await Promise.all([
       fetchAmazonProducts(itemName, make, model),
-      fetchFlipkartProducts(itemName, make, model)
+      fetchFlipkartProducts(itemName, make, model),
+      fetchIndiaMARTProducts(itemName, make, model)
     ]);
 
     // Combine the product lists
-    const products = [...amazonProducts, ...flipkartProducts];
+    const products = [...indiaMartProducts, ...flipkartProducts, ...amazonProducts];
 
     res.render('modelofproduct/index.ejs', { products, error: null });
   } catch (error) {

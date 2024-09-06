@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h3 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+form {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button, .btn-primary {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover, .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.product-item, .login-card {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-item h2, .login-card h3 {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.product-item p {
+  font-size: 16px;
+  color: #333;
+}
+
+.product-item a, .creative-link a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.product-item a:hover, .creative-link a:hover {
+  background-color: #218838;
+}
+
+.creative-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.creative-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.creative-link a:hover {
+  text-decoration: underline;
+}
