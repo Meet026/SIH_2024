@@ -1,15 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="assets/css/product.css">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Login</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Poppins:wght@100;400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Insert the CSS here */
+    .error {
+      color: #ff4d4f;
+      background-color: #fff1f0;
+      border: 1px solid #ff4d4f;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .success {
+  color: #28a745;              /* Green color to indicate success */
+  background-color: #d4edda;   /* Light green background */
+  border: 1px solid #c3e6cb;   /* Green border */
+  padding: 10px;               /* Padding around the success message */
+  margin-bottom: 15px;         /* Space below each success message */
+  border-radius: 5px;          /* Rounded corners */
+  font-size: 14px;             /* Font size for the success text */
+}
+
+/* Optional: styling for the list items in the success message */
+.success ul {
+  list-style-type: none;       /* Remove bullet points */
+  padding-left: 0;             /* Remove left padding */
+}
+
+.success li {
+  margin-bottom: 5px;          /* Space between list items */
+}
+.close-btn {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.close-btn:hover {
+  color: #155724; /* Darker green on hover */
+}
+.modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker background for better contrast */
+  }
+
+  .modal-content1 {
+    background-color: #ffffff; /* White background for modal content */
+    margin: 15% auto; /* Center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Width adjusted to 60% */
+    border-radius: 30px; /* Rounded corners for the modal content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+
+  .modal-header1, .modal-footer1 {
+    /* background-color: #383a46; Background color for header and footer */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px;
+    border-radius: 30px; /* Rounded corners for header and footer */
+  }
+
+  .modal-header1 {
+    /* border-bottom: 1px solid #0056b3; /* Border color for the bottom of the header */
+    background-color: #383a46; 
+  }
+
+  .modal-footer1 {
+    border-radius: 30 0 30px 30px; /* Rounded corners on the bottom */
+    text-align: right;
+  }
+
+  .modal-body1 {
+    padding: 20px;
+  }
+
+  .close1 {
+    color: #ffffff; /* White color for the close button */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close1:hover,
+  .close1:focus {
+    color: #dddddd; /* Slightly lighter color on hover/focus */
+  }
+
+  .modal-footer1 button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ef6603; /* Darker blue background for the OK button */
+    color: #ffffff; /* White text color */
+    border-radius: 30px; /* Rounded corners for the button */
+  }
+
+  .modal-footer1 button:hover {
+    background-color: #ef6603; /* Even darker blue on hover */
+  }
+  </style>
 </head>
 
-
-<body>
-  <h1>Product Search</h1>
+<body class="index-page">
 
   <form action="/modelofproduct/search" method="POST">
     <input type="text" name="itemName" placeholder="Item Name" required>
@@ -29,12 +159,10 @@
       <div class="product-item">
         <h2><%= product.title %></h2>
         <p>Price: <%= product.price %></p>
-        <p>Rating : <%= product.rating %></p>
         <a href="<%= product.image %>" target="_blank">View Product</a>
       </div>
     <% }) %>
   <% } %>
 </body>
-
 
 </html>
