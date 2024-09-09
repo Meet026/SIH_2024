@@ -75,6 +75,54 @@
   .modal-footer1 button:hover {
     background-color: #ef6603; /* Even darker blue on hover */
   }
+ /* Basic card styling similar to an e-commerce product display */
+/* Basic card styling similar to an e-commerce product display */
+.product-card .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px; /* Reduced margin to fit the category below */
+    text-align: center;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Basic hover effect for product card */
+.product-card .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling to fit well in cards */
+.product-card .card-img {
+    width: 100%;
+    height: 220px; /* Fixed height to maintain consistency */
+    object-fit: contain; /* Ensures the entire image is visible */
+    margin-bottom: 10px;
+}
+
+/* Portfolio info section */
+.portfolio-info {
+    padding: 10px 0;
+}
+
+.portfolio-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Product category styling */
+.product-category {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.product-category p {
+    font-size: 14px;
+    color: #666;
+}
+
   </style>
 
   <!-- Fonts -->
@@ -270,46 +318,54 @@
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/e1.jpeg" class="img-fluid" alt="not found">
-              <div class="portfolio-info">
-                <h4>Headphone</h4>
-                <!-- <p>Headphone</p> -->
-                <a href="assets/img/masonry-portfolio/e1.jpeg" title="Headphone" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/e1.jpeg" class="img-fluid card-img" alt="Headphone">
+                  <div class="portfolio-info">
+                      <h4>Headphone</h4>
+                  </div>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/e3.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>laptops</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/e3.jpeg" title="laptops" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+              <div class="product-category">
+                  <p>Category: Electronics</p> <!-- Example category -->
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/c1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Dress</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/c1.jpg" title="Dress" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/e3.jpeg" class="img-fluid card-img" alt="Laptops">
+                  <div class="portfolio-info">
+                      <h4>Laptops</h4>
+                  </div>
               </div>
-            </div><!-- End Portfolio Item -->
-
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/e2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Bluetooth Speaker</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/e2.jpg" title="Bluetooth Speaker" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+              <div class="product-category">
+                  <p>Category: Electronics</p> <!-- Example category -->
               </div>
-            </div><!-- End Portfolio Item -->
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/c1.jpg" class="img-fluid card-img" alt="Dress">
+                  <div class="portfolio-info">
+                      <h4>Dress</h4>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <p>Category: Clothing</p> <!-- Example category -->
+              </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/e2.jpg" class="img-fluid card-img" alt="Bluetooth Speaker">
+                  <div class="portfolio-info">
+                      <h4>Bluetooth Speaker</h4>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <h4><p>Bluetooth Speaker</p></h4> <!-- Example category -->
+              </div>
+          </div>
+          
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <img src="assets/img/masonry-portfolio/c2.jpeg" class="img-fluid" alt="">

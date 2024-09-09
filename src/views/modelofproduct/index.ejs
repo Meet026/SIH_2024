@@ -308,30 +308,10 @@
             <input type="text" class="form-control" id="model" name="model" placeholder="Enter model" required>
           </div>
           
-          <!-- Error Message -->
-          <% if (error) { %>
-            <div class="error">
-              <%= error %>
-            </div>
-          <% } %>
-          
-          <!-- Search Results -->
-          <% if (products) { %>
-            <!-- <h2>Search Results:</h2> -->
-            <% products.forEach(product => { %>
-              <br> <div id="product-item">
-                <h2><%= product.title %></h2>
-                <p>Price: <%= product.price %></p>
-                <a href="<%= product.image %>" target="_blank">View Product</a>
-              </div>
-            <% }) %>
-          <% } %>
-           <br>
           <button type="submit" class="btn btn-primary">Search</button>
         </form>
       </div>
     </section>
-    
     
 
     <!-- Contact Section -->
