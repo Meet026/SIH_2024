@@ -285,52 +285,57 @@
     <!-- Login Section -->
     <section class="login-section" style="padding: 65px;">
       <div class="login-card" style="width: 80%; max-width: 800px; margin: auto;">
-        <h3>Product Search</h3>
-        
-        <form id="search-form" action="/modelofproduct/search" method="POST">
-          <div class="mb-3">
-            <label for="itemName" class="form-label">Item Name</label>
-            <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Enter item name" required>
-          </div>
+          <h3>Product Search</h3>
           
-          <div class="mb-3">
-            <label for="itemType" class="form-label">Item Type</label>
-            <input type="text" class="form-control" id="itemType" name="itemType" placeholder="Enter item type" required>
-          </div>
-          
-          <div class="mb-3">
-            <label for="make" class="form-label">Make</label>
-            <input type="text" class="form-control" id="make" name="make" placeholder="Enter make" required>
-          </div>
-          
-          <div class="mb-3">
-            <label for="model" class="form-label">Model</label>
-            <input type="text" class="form-control" id="model" name="model" placeholder="Enter model" required>
-          </div>
-          
-          <!-- Error Message -->
-          <% if (error) { %>
-            <div class="error">
-              <%= error %>
-            </div>
-          <% } %>
-          
-          <!-- Search Results -->
-          <% if (products) { %>
-            <!-- <h2>Search Results:</h2> -->
-            <% products.forEach(product => { %>
-              <br> <div id="product-item">
-                <h2><%= product.title %></h2>
-                <p>Price: <%= product.price %></p>
-                <a href="<%= product.image %>" target="_blank">View Product</a>
+          <form id="productForm">
+              <div class="mb-3">
+                  <label for="itemName" class="form-label">Item Name</label>
+                  <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Item Name" required>
               </div>
-            <% }) %>
-          <% } %>
-           <br>
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
+    
+              <div class="mb-3">
+                  <label for="itemType" class="form-label">Item Type</label>
+                  <input type="text" class="form-control" id="itemType" name="itemType" placeholder="Item Type" required>
+              </div>
+    
+              <!-- Description fields will be added here dynamically -->
+              <div id="descriptionContainer">
+                  <div class="description-group mb-3">
+                      <label for="description" class="form-label">Description</label>
+                      <input type="text" class="form-control" id="description" name="description[]" placeholder="Description" required>
+                  </div>
+              </div>
+    
+              <!-- Button to add more descriptions -->
+              <button type="button" class="btn btn-secondary" onclick="addDescription()">Add More Descriptions</button>
+              
+              <br><br>
+              <button type="submit" class="btn btn-primary">Search</button>
+          </form>
       </div>
     </section>
+    
+    <script>
+      function addDescription() {
+          // Create a new div to hold the description input field
+          const descGroup = document.createElement('div');
+          descGroup.className = 'description-group mb-3';
+    
+          // Create a new input field for the description
+          const descInput = document.createElement('input');
+          descInput.type = 'text';
+          descInput.name = 'description[]';
+          descInput.placeholder = 'Description';
+          descInput.required = true;
+          descInput.className = 'form-control';
+    
+          // Append the input field to the div
+          descGroup.appendChild(descInput);
+    
+          // Add the new div to the description container
+          document.getElementById('descriptionContainer').appendChild(descGroup);
+      }
+    </script>
     
     
 

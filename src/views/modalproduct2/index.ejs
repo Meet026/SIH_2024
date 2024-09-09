@@ -283,54 +283,70 @@
       </div>
     <% } %>
     <!-- Login Section -->
-    <section class="login-section" style="padding: 65px;">
+    <section class="login-section" style="padding: 165px;">
       <div class="login-card" style="width: 80%; max-width: 800px; margin: auto;">
-        <h3>Product Search</h3>
-        
-        <form id="search-form" action="/modelofproduct/search" method="POST">
-          <div class="mb-3">
-            <label for="itemName" class="form-label">Item Name</label>
-            <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Enter item name" required>
-          </div>
+          <h3>Product Specification</h3>
           
-          <div class="mb-3">
-            <label for="itemType" class="form-label">Item Type</label>
-            <input type="text" class="form-control" id="itemType" name="itemType" placeholder="Enter item type" required>
-          </div>
-          
-          <div class="mb-3">
-            <label for="make" class="form-label">Make</label>
-            <input type="text" class="form-control" id="make" name="make" placeholder="Enter make" required>
-          </div>
-          
-          <div class="mb-3">
-            <label for="model" class="form-label">Model</label>
-            <input type="text" class="form-control" id="model" name="model" placeholder="Enter model" required>
-          </div>
-          
-          <!-- Error Message -->
-          <% if (error) { %>
-            <div class="error">
-              <%= error %>
-            </div>
-          <% } %>
-          
-          <!-- Search Results -->
-          <% if (products) { %>
-            <!-- <h2>Search Results:</h2> -->
-            <% products.forEach(product => { %>
-              <br> <div id="product-item">
-                <h2><%= product.title %></h2>
-                <p>Price: <%= product.price %></p>
-                <a href="<%= product.image %>" target="_blank">View Product</a>
+          <form id="specForm">
+              <div class="mb-3">
+                 <label for="specName" class="form-label">Item Name</label>
+                 <input type="text" class="form-control" id="specName" name="specification[]" placeholder="Specification Name" required>
               </div>
-            <% }) %>
-          <% } %>
-           <br>
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
+              <div class="mb-3">
+                  <label for="specName" class="form-label">Item Type</label>
+                  <input type="text" class="form-control" id="specName" name="specification[]" placeholder="Specification Name" required>
+              </div>
+              <div class="mb-3">
+                  <label for="specName" class="form-label">Specification Name</label>
+                  <input type="text" class="form-control" id="specName" name="specification[]" placeholder="Specification Name" required>
+              </div>
+              
+              <div class="mb-3">
+                  <label for="specValue" class="form-label">Specification Value</label>
+                  <input type="text" class="form-control" id="specValue" name="value[]" placeholder="Specification Value" required>
+              </div>
+    
+              <div id="specificationContainer"></div> <!-- New fields will be added here -->
+    
+              <!-- Button to add more specifications --><br>
+              <button type="button" class="btn btn-secondary" onclick="addSpecification()">Add More Specifications</button>
+              
+              <br><br>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
       </div>
     </section>
+    
+    <script>
+      function addSpecification() {
+          // Create a new div to hold the specification input fields
+          const specGroup = document.createElement('div');
+          specGroup.className = 'specification-group mb-3';
+    
+          // Create a new input field for the specification name
+          const specNameInput = document.createElement('input');
+          specNameInput.type = 'text';
+          specNameInput.name = 'specification[]';
+          specNameInput.placeholder = 'Specification Name';
+          specNameInput.required = true;
+          specNameInput.className = 'form-control';
+    
+          // Create a new input field for the specification value
+          const specValueInput = document.createElement('input');
+          specValueInput.type = 'text';
+          specValueInput.name = 'value[]';
+          specValueInput.placeholder = 'Specification Value';
+          specValueInput.required = true;
+          specValueInput.className = 'form-control';
+    
+          // Append the input fields to the div
+          specGroup.appendChild(specNameInput);
+          specGroup.appendChild(specValueInput);
+    
+          // Add the new div to the specification container
+          document.getElementById('specificationContainer').appendChild(specGroup);
+      }
+    </script>
     
     
 
