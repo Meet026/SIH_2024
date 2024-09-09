@@ -8,6 +8,7 @@ import { fetchAmazonProducts } from './crawling/amazone.js';
 import { fetchIndiaMARTProducts } from './crawling/indiaMart.js';
 import flash from 'connect-flash';
 import session from 'express-session';
+import filterAndAnalyzeProducts from './utils/Analysis.js';
 
 dotenv.config({
   path: './.env'
@@ -79,7 +80,6 @@ app.post('/user/register', (req, res) => {
   }
 });
 
-
 app.post('/user/login', (req, res) => {
   const {email, password} = req.body;
   const errors = {};
@@ -122,7 +122,12 @@ app.post('/modelofproduct/search', async (req, res) => {
     ]);
 
     // Combine the product lists
-    const products = [...indiaMartProducts, ...flipkartProducts, ...amazonProducts];
+    let products = [...flipkartProducts, ...indiaMartProducts, ...amazonProducts];
+
+    products = filterAndAnalyzeProducts(itemName, make, model, products)
+
+    console.log("products after sentiment : ", products);
+    
 
     res.render('modelofproduct/index.ejs', { products, error: null });
   } catch (error) {
@@ -134,7 +139,6 @@ app.post('/modelofproduct/search', async (req, res) => {
 // Route import
 import userRouter from "../src/routes/user.routes.js"
 app.use("/user", userRouter);
-
 
 connectDB()
 .then(() => {

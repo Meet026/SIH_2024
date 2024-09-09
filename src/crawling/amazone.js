@@ -7,7 +7,7 @@ export async function fetchAmazonProducts(itemName, make, model) {
 
   let products = [];
   let currentPage = 1;
-  const maxPages = 5;
+  const maxPages = 3;
 
   try {
     const browser = await puppeteer.launch({ headless: true });
@@ -34,11 +34,15 @@ export async function fetchAmazonProducts(itemName, make, model) {
           const linkElement = item.querySelector('h2 a');
           const image = linkElement ? `${amazonBaseUrl}${linkElement.getAttribute('href')}` : null;
 
+          const ratingElement = item.querySelector('.a-icon-alt');
+          const rating = ratingElement ? ratingElement.innerHTML.trim() : null;
+
           if (title && priceInINR && image) {
             return {
               title,
               price: `₹${priceInINR}`,
               image,
+              rating
             };
           }
           return null;

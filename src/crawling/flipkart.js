@@ -14,10 +14,9 @@ puppeteer.use(
 export async function fetchFlipkartProducts(itemName, make, model) {
   const searchQuery = `${itemName} ${make} ${model}`;
   const flipkartBaseUrl = "https://www.flipkart.com";
-  const usdToInrRate = 83; // Example conversion rate
 
   let products = [];
-  const maxPages = 6; // Limit to 6 pages
+  const maxPages = 3; // Limit to 6 pages
 
   try {
     const browser = await puppeteer.launch({
@@ -52,7 +51,10 @@ export async function fetchFlipkartProducts(itemName, make, model) {
           const priceElement = element.querySelector('.hl05eU .Nx9bqj._4b5DiR');
           const price = priceElement ? priceElement.innerText.trim() : null;
 
-          return title && image && price ? { title, image, price } : null;
+          const ratingElement = element.querySelector('.XQDdHH');
+          const rating = ratingElement ? ratingElement.childNodes[0].textContent.trim() : null;
+
+          return title && image && price && rating ? { title, image, price, rating } : null;
         }).filter(product => product !== null); // Filter out any null products
       }, flipkartBaseUrl);
 
@@ -68,37 +70,9 @@ export async function fetchFlipkartProducts(itemName, make, model) {
     }
 
     await browser.close();
+    console.log("From flipkart : ", products);
 
-    // Now apply natural language processing to filter products
-    const relevantProducts = products.filter(product => {
-      if (!product.title) return false; // Ensure title is not null
-
-      const tokenizer = new natural.WordTokenizer();
-      const titleTokens = tokenizer.tokenize(product.title.toLowerCase());
-      const queryTokens = tokenizer.tokenize(searchQuery.toLowerCase());
-
-      const commonTokens = queryTokens.filter(token => titleTokens.includes(token));
-
-      // Require that most of the tokens match for relevance
-      const matchScore = commonTokens.length / queryTokens.length;
-      return matchScore > 0.5; // Adjust threshold as needed
-    });
-
-    // Sort by match score (optional) and limit to the first 3 most relevant products
-    const sortedRelevantProducts = relevantProducts.sort((a, b) => {
-      const tokenizer = new natural.WordTokenizer();
-      const aTokens = tokenizer.tokenize(a.title.toLowerCase());
-      const bTokens = tokenizer.tokenize(b.title.toLowerCase());
-      const queryTokens = tokenizer.tokenize(searchQuery.toLowerCase());
-
-      const aCommonTokens = queryTokens.filter(token => aTokens.includes(token));
-      const bCommonTokens = queryTokens.filter(token => bTokens.includes(token));
-
-      return bCommonTokens.length - aCommonTokens.length;
-    });
-
-    return sortedRelevantProducts.slice(0, 3);
-
+    return products;
   } catch (error) {
     console.error('Error fetching products from Flipkart:', error);
     return [];
