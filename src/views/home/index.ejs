@@ -75,6 +75,54 @@
   .modal-footer1 button:hover {
     background-color: #ef6603; /* Even darker blue on hover */
   }
+ /* Basic card styling similar to an e-commerce product display */
+/* Basic card styling similar to an e-commerce product display */
+.product-card .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px; /* Reduced margin to fit the category below */
+    text-align: center;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Basic hover effect for product card */
+.product-card .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling to fit well in cards */
+.product-card .card-img {
+    width: 100%;
+    height: 220px; /* Fixed height to maintain consistency */
+    object-fit: contain; /* Ensures the entire image is visible */
+    margin-bottom: 10px;
+}
+
+/* Portfolio info section */
+.portfolio-info {
+    padding: 10px 0;
+}
+
+.portfolio-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Product category styling */
+.product-category {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.product-category p {
+    font-size: 14px;
+    color: #666;
+}
+
   </style>
 
   <!-- Fonts -->
@@ -270,340 +318,512 @@
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/e1.jpeg" class="img-fluid" alt="not found">
-              <div class="portfolio-info">
-                <h4>Headphone</h4>
-                <!-- <p>Headphone</p> -->
-                <a href="assets/img/masonry-portfolio/e1.jpeg" title="Headphone" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/e1.jpeg" class="img-fluid card-img" alt="Headphone">
+                  <div class="portfolio-info">
+                      <h4>Headphone</h4>
+                      <a href="assets/img/masonry-portfolio/e1.jpeg" title="Tops" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                  </div>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/e3.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>laptops</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/e3.jpeg" title="laptops" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+              <div class="product-category">
+                  <p>Headphone</p> 
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/c1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Dress</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/c1.jpg" title="Dress" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+          </div>
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/e3.jpeg" class="img-fluid card-img" alt="Laptops">
+                  <div class="portfolio-info">
+                      <h4>Laptops</h4>
+                      <a href="assets/img/masonry-portfolio/e3.jpeg" title="Tops" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                  </div>
               </div>
-            </div><!-- End Portfolio Item -->
-
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/e2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Bluetooth Speaker</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/e2.jpg" title="Bluetooth Speaker" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+              <div class="product-category">
+                  <p>Laptops</p> 
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/c2.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Shirt</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/c2.jpeg" title="Shirt" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+          </div>
+           -->
+           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app product-card">
+            <div class="card">
+                <!-- Image for Laptops -->
+                <img src="assets/img/masonry-portfolio/e3.jpeg" class="img-fluid card-img" alt="Laptops">
+                <div class="portfolio-info">
+                    <h4>Laptops</h4>
+                    <!-- Zoom functionality -->
+                    <a href="assets/img/masonry-portfolio/e3.jpeg" title="Laptops" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-category">
+                <p>Laptops</p> <!-- Example category -->
+            </div>
+        </div>
+        
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/c1.jpg" class="img-fluid card-img" alt="Dress">
+                  <div class="portfolio-info">
+                      <h4>Dress</h4>
+                      <a href="assets/img/masonry-portfolio/c1.jpg" title="Tops" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                  </div>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/c4.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Tops</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/c4.jpeg" title="Tops" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+              <div class="product-category">
+                  <p>Dress</p> 
               </div>
-            </div><!-- End Portfolio Item -->
-
-           
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/e2.jpg" class="img-fluid card-img" alt="Bluetooth Speaker">
+                  <div class="portfolio-info">
+                      <h4>Bluetooth Speaker</h4>
+                      <a href="assets/img/masonry-portfolio/e2.jpg" title="Tops" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-category">
+                <p>Bluetooth Speaker</p> 
+            </div>
+        </div>
+        
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/e2.jpg" class="img-fluid card-img" alt="Bluetooth Speaker">
+                  <div class="portfolio-info">
+                      <h4>Bluetooth Speaker</h4>
+                      <a href="assets/img/masonry-portfolio/c1.jpg" title="Tops" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <h4><p>Bluetooth Speaker</p></h4> 
+              </div>
+          </div> -->
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product product-card">
+            <div class="card">
+                <img src="assets/img/masonry-portfolio/c2.jpeg" class="img-fluid card-img" alt="Shirt">
+                <div class="portfolio-info">
+                    <h4>Shirt</h4>
+                    <!-- The zoom icon and other functionality remains intact -->
+                    <a href="assets/img/masonry-portfolio/c2.jpeg" title="Shirt" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-category">
+                <h4><p>Shirt</p></h4> <!-- Example category -->
+            </div>
+        </div>    
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/c4.jpeg" class="img-fluid card-img" alt="Tops">
               <div class="portfolio-info">
+                  <h4>Tops</h4>
+                  <!-- Keeping the zoom functionality intact -->
+                  <a href="assets/img/masonry-portfolio/c4.jpeg" title="Tops" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Tops</p></h4> <!-- Category name for the product -->
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app product-card">
+        <div class="card">
+            <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid card-img" alt="Camera">
+            <div class="portfolio-info">
                 <h4>Camera</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="Camera" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/c3.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Jeans</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/c3.jpeg" title="Jeans" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-machine">
-              <img src="assets/img/masonry-portfolio/m1.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sewing machine</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/m1.jpeg" title="Sewing machine" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-machine">
-              <img src="assets/img/masonry-portfolio/m3.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Powerpress machine</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/m3.jpeg" title="Powerpress machine" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-machine">
-              <img src="assets/img/masonry-portfolio/m4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Drilling machine</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/m4.jpg" title="Drilling machine" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-machine">
-              <img src="assets/img/masonry-portfolio/m2.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Motor</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/m2.jpeg" title="Motor" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-network">
-              <img src="assets/img/masonry-portfolio/n1.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Router</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/n1.jpeg" title="Router" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-network">
-              <img src="assets/img/masonry-portfolio/n2.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Switch</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/n2.jpeg" title="Switch" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-network">
-              <img src="assets/img/masonry-portfolio/n3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Antenna</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/n3.jpg" title="Antenna" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-network">
-              <img src="assets/img/masonry-portfolio/n4.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Wires</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/n4.jpeg" title="Wires" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-footware">
-              <img src="assets/img/masonry-portfolio/f1.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Shoes</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/f1.jpeg" title="Shoes" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-footware">
-              <img src="assets/img/masonry-portfolio/f2.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Sandals</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/f2.jpeg" title="Sandals" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-footware">
-              <img src="assets/img/masonry-portfolio/f3.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Heels</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/f3.jpeg" title="Heels" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-footware">
-              <img src="assets/img/masonry-portfolio/f4.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Boots</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/f4.jpeg" title="Boots" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical">
-              <img src="assets/img/masonry-portfolio/med.1.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Scissor</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/med.1.jpeg" title="Scissor" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical">
-              <img src="assets/img/masonry-portfolio/med2.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Injection</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/med2.jpeg" title="Injection" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical">
-              <img src="assets/img/masonry-portfolio/med3.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Stethoscope</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/med3.jpeg" title="Stethoscope" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical">
-              <img src="assets/img/masonry-portfolio/med4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>BP meter</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/med4.jpg" title="BP meter" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical">
-              <img src="assets/img/masonry-portfolio/med5.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Thermometer</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/med5.jpeg" title="Thermometer" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical">
-              <img src="assets/img/masonry-portfolio/med6.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Surgical mask</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/med6.jpeg" title="Surgical mask" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary">
-              <img src="assets/img/masonry-portfolio/s1.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/s1.jpeg" title="Books" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary">
-              <img src="assets/img/masonry-portfolio/s2.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Pens</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/s2.jpeg" title="Pens" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary">
-              <img src="assets/img/masonry-portfolio/s3.jpeg" class="img-fluid" alt="not found">
-              <div class="portfolio-info">
-                <h4>Colors</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/s3.jpeg" title="Colors" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary">
-              <img src="assets/img/masonry-portfolio/s4.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Files</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/s4.jpeg" title="Files" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary">
-              <img src="assets/img/masonry-portfolio/s5.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Pencils</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/s5.jpeg" title="Pencils" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary">
-              <img src="assets/img/masonry-portfolio/s6.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Compass Box</h4>
-                <!-- <p>Lorem ipsum, dolor sit</p> -->
-                <a href="assets/img/masonry-portfolio/s6.jpeg" title="Compass Box" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
+                <!-- Keeping the zoom functionality intact -->
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="Camera" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                    <i class="bi bi-zoom-in"></i>
+                </a>
+            </div>
+        </div>
+        <div class="product-category">
+            <h4><p>Camera</p></h4> <!-- Category name for the product -->
+        </div>
+    </div>          
             
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/c3.jpeg" class="img-fluid card-img" alt="Jeans">
+                  <div class="portfolio-info">
+                      <h4>Jeans</h4>
+                      <a href="assets/img/masonry-portfolio/c3.jpeg" title="Jeans" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                          <i class="bi bi-zoom-in"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <h4><p>Jeans</p></h4> <!-- Category name for the product -->
+              </div>
+          </div>
+      
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-machine product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/m1.jpeg" class="img-fluid card-img" alt="Sewing machine">
+                  <div class="portfolio-info">
+                      <h4>Sewing machine</h4>
+                      <a href="assets/img/masonry-portfolio/m1.jpeg" title="Sewing machine" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                          <i class="bi bi-zoom-in"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <h4><p>Sewing machine</p></h4> <!-- Category name for the product -->
+              </div>
+          </div>
 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-machine product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/m3.jpeg" class="img-fluid card-img" alt="Powerpress machine">
+                  <div class="portfolio-info">
+                      <h4>Powerpress machine</h4>
+                      <a href="assets/img/masonry-portfolio/m3.jpeg" title="Powerpress machine" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                          <i class="bi bi-zoom-in"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <h4><p>Powerpress machine</p></h4> <!-- Category name for the product -->
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-machine product-card">
+            <div class="card">
+                <img src="assets/img/masonry-portfolio/m4.jpg" class="img-fluid card-img" alt="Drilling machine">
+                <div class="portfolio-info">
+                    <h4>Drilling machine</h4>
+                    <a href="assets/img/masonry-portfolio/m4.jpg" title="Drilling machine" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-category">
+                <h4><p>Drilling machine</p></h4> <!-- Category name for the product -->
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-machine product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/m2.jpeg" class="img-fluid card-img" alt="Motor">
+              <div class="portfolio-info">
+                  <h4>Motor</h4>
+                  <a href="assets/img/masonry-portfolio/m2.jpeg" title="Motor" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Motor</p></h4> <!-- Category name for the product -->
+          </div>
+      </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-network product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/n1.jpeg" class="img-fluid card-img" alt="Router">
+                  <div class="portfolio-info">
+                      <h4>Router</h4>
+                      <a href="assets/img/masonry-portfolio/n1.jpeg" title="Router" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                          <i class="bi bi-zoom-in"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <h4><p>Router</p></h4> <!-- Category name for the product -->
+              </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-network product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/n2.jpeg" class="img-fluid card-img" alt="Switch">
+                  <div class="portfolio-info">
+                      <h4>Switch</h4>
+                      <a href="assets/img/masonry-portfolio/n2.jpeg" title="Switch" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                          <i class="bi bi-zoom-in"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <h4><p>Switch</p></h4> <!-- Category name for the product -->
+              </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-network product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/n3.jpg" class="img-fluid card-img" alt="Antenna">
+                  <div class="portfolio-info">
+                      <h4>Antenna</h4>
+                      <a href="assets/img/masonry-portfolio/n3.jpg" title="Antenna" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                          <i class="bi bi-zoom-in"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <h4><p>Antenna</p></h4> <!-- Category name for the product -->
+              </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-network product-card">
+              <div class="card">
+                  <img src="assets/img/masonry-portfolio/n4.jpeg" class="img-fluid card-img" alt="Wires">
+                  <div class="portfolio-info">
+                      <h4>Wires</h4>
+                      <a href="assets/img/masonry-portfolio/n4.jpeg" title="Wires" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                          <i class="bi bi-zoom-in"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="product-category">
+                  <h4><p>Wires</p></h4> <!-- Category name for the product -->
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-footware product-card">
+            <div class="card">
+                <img src="assets/img/masonry-portfolio/f1.jpeg" class="img-fluid card-img" alt="Shoes">
+                <div class="portfolio-info">
+                    <h4>Shoes</h4>
+                    <a href="assets/img/masonry-portfolio/f1.jpeg" title="Shoes" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-category">
+                <h4><p>Shoes</p></h4> <!-- Category name for the product -->
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-footware product-card">
+            <div class="card">
+                <img src="assets/img/masonry-portfolio/f2.jpeg" class="img-fluid card-img" alt="Sandals">
+                <div class="portfolio-info">
+                    <h4>Sandals</h4>
+                    <a href="assets/img/masonry-portfolio/f2.jpeg" title="Sandals" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-category">
+                <h4><p>Sandals</p></h4> <!-- Category name for the product -->
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-footware product-card">
+            <div class="card">
+                <img src="assets/img/masonry-portfolio/f3.jpeg" class="img-fluid card-img" alt="Heels">
+                <div class="portfolio-info">
+                    <h4>Heels</h4>
+                    <a href="assets/img/masonry-portfolio/f3.jpeg" title="Heels" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-category">
+                <h4><p>Heels</p></h4> <!-- Category name for the product -->
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-footware product-card">
+            <div class="card">
+                <img src="assets/img/masonry-portfolio/f4.jpeg" class="img-fluid card-img" alt="Boots">
+                <div class="portfolio-info">
+                    <h4>Boots</h4>
+                    <a href="assets/img/masonry-portfolio/f4.jpeg" title="Boots" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                        <i class="bi bi-zoom-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="product-category">
+                <h4><p>Boots</p></h4> <!-- Category name for the product -->
+            </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/med.1.jpeg" class="img-fluid card-img" alt="Scissor">
+              <div class="portfolio-info">
+                  <h4>Scissor</h4>
+                  <a href="assets/img/masonry-portfolio/med.1.jpeg" title="Scissor" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Scissor</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/med2.jpeg" class="img-fluid card-img" alt="Injection">
+              <div class="portfolio-info">
+                  <h4>Injection</h4>
+                  <a href="assets/img/masonry-portfolio/med2.jpeg" title="Injection" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Injection</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/med3.jpeg" class="img-fluid card-img" alt="Stethoscope">
+              <div class="portfolio-info">
+                  <h4>Stethoscope</h4>
+                  <a href="assets/img/masonry-portfolio/med3.jpeg" title="Stethoscope" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Stethoscope</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/med4.jpg" class="img-fluid card-img" alt="BP meter">
+              <div class="portfolio-info">
+                  <h4>BP meter</h4>
+                  <a href="assets/img/masonry-portfolio/med4.jpg" title="BP meter" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>BP meter</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/med5.jpeg" class="img-fluid card-img" alt="Thermometer">
+              <div class="portfolio-info">
+                  <h4>Thermometer</h4>
+                  <a href="assets/img/masonry-portfolio/med5.jpeg" title="Thermometer" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Thermometer</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/med6.jpeg" class="img-fluid card-img" alt="Surgical mask">
+              <div class="portfolio-info">
+                  <h4>Surgical mask</h4>
+                  <a href="assets/img/masonry-portfolio/med6.jpeg" title="Surgical mask" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Surgical mask</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/s1.jpeg" class="img-fluid card-img" alt="Books">
+              <div class="portfolio-info">
+                  <h4>Books</h4>
+                  <a href="assets/img/masonry-portfolio/s1.jpeg" title="Books" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Books</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/s2.jpeg" class="img-fluid card-img" alt="Pens">
+              <div class="portfolio-info">
+                  <h4>Pens</h4>
+                  <a href="assets/img/masonry-portfolio/s2.jpeg" title="Pens" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Pens</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/s3.jpeg" class="img-fluid card-img" alt="Colors">
+              <div class="portfolio-info">
+                  <h4>Colors</h4>
+                  <a href="assets/img/masonry-portfolio/s3.jpeg" title="Colors" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Colors</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/s4.jpeg" class="img-fluid card-img" alt="Files">
+              <div class="portfolio-info">
+                  <h4>Files</h4>
+                  <a href="assets/img/masonry-portfolio/s4.jpeg" title="Files" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Files</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/s5.jpeg" class="img-fluid card-img" alt="Pencils">
+              <div class="portfolio-info">
+                  <h4>Pencils</h4>
+                  <a href="assets/img/masonry-portfolio/s5.jpeg" title="Pencils" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Pencils</p></h4>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-stationary product-card">
+          <div class="card">
+              <img src="assets/img/masonry-portfolio/s6.jpeg" class="img-fluid card-img" alt="Compass Box">
+              <div class="portfolio-info">
+                  <h4>Compass Box</h4>
+                  <a href="assets/img/masonry-portfolio/s6.jpeg" title="Compass Box" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                  </a>
+              </div>
+          </div>
+          <div class="product-category">
+              <h4><p>Compass Box</p></h4>
+          </div>
+      </div>
           </div><!-- End Portfolio Container -->
 
         </div>
@@ -718,16 +938,7 @@
         <a href=""><i class="bi bi-skype"></i></a>
         <a href=""><i class="bi bi-linkedin"></i></a>
       </div>
-      <!-- <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Selecao</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits"> -->
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      
         </div>
       </div>
     </div>
