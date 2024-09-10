@@ -80,6 +80,7 @@ app.post('/user/register', (req, res) => {
   }
 });
 
+
 app.post('/user/login', (req, res) => {
   const {email, password} = req.body;
   const errors = {};
@@ -102,7 +103,17 @@ app.post('/user/login', (req, res) => {
 
 app.get('/modelofproduct', (req, res) => {
   // res.send('Welcome to the new page!');
-  res.render('modelofproduct/index.ejs', { products: [], error: null });
+  res.render('modelofproduct/index.ejs',{ products: [], error: null });
+});
+
+app.get('/modelofproduct2', (req, res) => {
+  // res.send('Welcome to the new page!');
+  res.render('modelofproduct2/index.ejs');
+});
+
+app.get('/modelofproduct3', (req, res) => {
+  // res.send('Welcome to the new page!');
+  res.render('modelofproduct3/index.ejs');
 });
 
 
@@ -122,14 +133,14 @@ app.post('/modelofproduct/search', async (req, res) => {
     ]);
 
     // Combine the product lists
-    let products = [...flipkartProducts, ...indiaMartProducts, ...amazonProducts];
+    // let products = [...flipkartProducts, ...indiaMartProducts, ...amazonProducts];
 
-    products = filterAndAnalyzeProducts(itemName, make, model, products)
+    // products = filterAndAnalyzeProducts(itemName, make, model, products)
 
-    console.log("products after sentiment : ", products);
+    // console.log("products after sentiment : ", products);
+
     
-
-    res.render('modelofproduct/index.ejs', { products, error: null });
+    res.redirect("/modelofproduct");
   } catch (error) {
     console.error(error);
     res.render('modelofproduct/index.ejs', { error: 'An error occurred while fetching data', products: [] });
@@ -139,6 +150,7 @@ app.post('/modelofproduct/search', async (req, res) => {
 // Route import
 import userRouter from "../src/routes/user.routes.js"
 app.use("/user", userRouter);
+
 
 connectDB()
 .then(() => {

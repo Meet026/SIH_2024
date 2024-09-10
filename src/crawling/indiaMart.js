@@ -12,7 +12,7 @@ export async function fetchIndiaMARTProducts(itemName, make, model) {
 
   try {
     const browser = await puppeteer.launch({
-      headless: 'new', // Ensures the browser runs in true headless mode
+      headless: false, // Ensures the browser runs in true headless mode
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'

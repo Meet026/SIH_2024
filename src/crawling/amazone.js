@@ -10,7 +10,13 @@ export async function fetchAmazonProducts(itemName, make, model) {
   const maxPages = 3;
 
   try {
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      headless: false, // Ensures the browser runs in true headless mode
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+      ]
+    });
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0');
 

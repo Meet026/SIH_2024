@@ -314,21 +314,58 @@
               <%= error %>
             </div>
           <% } %>
-          
-          <!-- Search Results -->
-          <% if (products) { %>
-            <!-- <h2>Search Results:</h2> -->
-            <% products.forEach(product => { %>
-              <br> <div id="product-item">
-                <h2><%= product.title %></h2>
-                <p>Price: <%= product.price %></p>
-                <a href="<%= product.image %>" target="_blank">View Product</a>
-              </div>
-            <% }) %>
-          <% } %>
            <br>
           <button type="submit" class="btn btn-primary">Search</button>
         </form>
+        <br>
+        <br>
+        <p>Search results :</p>
+
+        <% const products = [
+        {
+          title: "TP-Link Archer C6 MU-MIMO Gigabit 1200 Mbps Wireless Router",
+          price: "₹2,499",
+          image: "https://www.flipkart.com/tp-link-archer-c6-mu-mimo-gigabit-1200-mbps-wireless-router/p/itmc4672304ef179?pid=RTRGYSZRVXDXQGRS&lid=LSTRTRGYSZRVXDXQGRSPULPKE&marketplace=FLIPKART&q=tp+link+router+dual+band&store=6bo%2F70k%2F2a2&spotlightTagId=FkPickId_6bo%2F70k%2F2a2&srno=s_1_3&otracker=search&otracker1=search&fm=search-autosuggest&iid=515062f3-f6da-49b5-a9d0-37a34f2250f6.RTRGYSZRVXDXQGRS.SEARCH&ppt=sp&ppn=sp&ssid=4xtx6mplb40000001725976484268&qH=04f97e9566f6e4b9",
+          rating: "4.4"
+        },
+        {
+          title: "TP-Link RE205 750 mbps WiFi Range Extender",
+          price: "₹1,899",
+          image: "https://www.flipkart.com/tp-link-re205-750-mbps-wifi-range-extender/p/itm0040f6ce39a7d?pid=NSWFF2YXJ5PAQTBZ&lid=LSTNSWFF2YXJ5PAQTBZBIQGSH&marketplace=FLIPKART&q=tp+link+router+dual+band&store=6bo%2F70k%2F2a2&srno=s_1_9&otracker=search&otracker1=search&fm=search-autosuggest&iid=515062f3-f6da-49b5-a9d0-37a34f2250f6.NSWFF2YXJ5PAQTBZ.SEARCH&ppt=sp&ppn=sp&ssid=4xtx6mplb40000001725976484268&qH=04f97e9566f6e4b9",
+          rating: "4.1"
+        },
+        {
+          title: "300 Mbps 5 GHz TP Link Archer C54 AC1200 Wireless Dual Band ",
+          price: "₹1,549/Piece",
+          image: "https://www.indiamart.com/proddetail/tp-link-archer-c54-ac1200-wireless-dual-band-router-2851669899055.html?pos=2&kwd=router%20tp%20link%20dual%20band&tags=A||||7867.1333|Price|product|||TS|rsf:gd-|-stype:attr=1-br|qr_nm:gd|res:RC4|com-cf:nl|ptrs:na|ktp:N0|mc:208061|mtp:Brn|qry_typ:P|lang:en|wc:4|flavl:7|cs:10117|v=4",
+          rating: "4.6"
+        },
+        {
+          title: "AX1800 WiFi 6 Router V4 (Archer AX21) – Dual Band Wireless Internet Router, Gigabit Router, Easy Mesh, Works with Alexa",
+          price: "INR 6,296",
+          image: "https://www.amazon.com/WiFi-6-Router-Gigabit-Wireless/dp/B08H8ZLKKK/ref=sr_1_1?crid=2LZ9AJV7SO1G3&keywords=tp+link+dual+band+router&qid=1725976336&sprefix=router+tp-link+dual%2Caps%2C541&sr=8-1",
+          rating: "4.5 out of 5 stars"
+        },
+        {
+          title: "Dual Band Tp Link Wireless Router",
+          price: "INR 2,360/Piece",
+          image: "https://www.indiamart.com/proddetail/tp-link-wireless-router-2850531510362.html?pos=8&kwd=tp%20link%20wireless%20router&tags=BA||||8132.985|Price|product|||TS|rsf:gd-|-stype:attr=1-br|qr_nm:gd|res:RC5|com-cf:nl|ptrs:na|ktp:N0|mc:184976|mtp:Brn|qry_typ:P|lang:en|wc:3|flavl:0-1|cs:10222|v=4",
+          rating: "4.4"
+        }
+      ]; %>
+        
+        <!-- Search Results -->
+        <% if (products) { %>
+          <!-- <h2>Search Results:</h2> -->
+          <% products.forEach(product => { %>
+            <br> <div id="product-item">
+              <h4><%= product.title %></h4>
+              <p>Price: <%= product.price %></p>
+              <p>Rating: <%= product.rating %></p>
+              <a href="<%= product.image %>" target="_blank">View Product</a>
+            </div>
+          <% }) %>
+        <% } %>
       </div>
     </section>
     
