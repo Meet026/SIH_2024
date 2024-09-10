@@ -55,7 +55,7 @@ app.get('/', (req,res) => {
 
 app.get('/register', (req,res) => {
   const errors = req.flash('errors')[0] || {};
-  res.render('signup/index.ejs',{ errors})
+  res.render('register/index.ejs',{ errors})
 })
 
 app.post('/user/register', (req, res) => {
