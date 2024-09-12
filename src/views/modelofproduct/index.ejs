@@ -219,6 +219,15 @@
         .modal-footer1 button:hover {
             background-color: #ef6603; /* Even darker blue on hover */
         }
+
+        .entry-count-box {
+        margin-left: 470px; /* Adjust space between the box and the search button */
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
     </style>
 </head>
 
@@ -441,14 +450,15 @@
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Search..." />
                 <button onclick="searchTable()">Search</button>
+                <span id="entryCount" class="entry-count-box">0 entries found</span> <!-- Element to display the number of entries -->
             </div>
             <div class="table-container">
                 <table id="dataTable">
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>Price</th>
-                            <th>Rating</th>
+                            <th>Price <span class="sort-icon" onclick="sortTable('price')"></span></th>
+                            <th>Rating <span class="sort-icon" onclick="sortTable('rating')"></span></th>
                             <th>Image</th>
                         </tr>
                     </thead>
@@ -468,38 +478,94 @@
         </div>
         
         <script>
+            let sortDirection = {
+                price: 'asc',
+                rating: 'asc'
+            };
+        
             function searchTable() {
-                // Get the search input value
                 const searchValue = document.getElementById('searchInput').value.toLowerCase();
-                
-                // Get all rows in the table
                 const rows = document.querySelectorAll('#dataTable tbody tr');
-                
+                let visibleCount = 0;
+        
                 rows.forEach(row => {
-                    // Get the text content of the row
                     const cells = row.getElementsByTagName('td');
                     let found = false;
-                    
-                    // Check if any cell contains the search term
+        
                     for (let i = 0; i < cells.length; i++) {
                         if (cells[i].textContent.toLowerCase().includes(searchValue)) {
                             found = true;
                             break;
                         }
                     }
-                    
-                    // Show or hide the row based on the search term
+        
                     if (found) {
                         row.style.display = '';
+                        visibleCount++;
                     } else {
                         row.style.display = 'none';
                     }
                 });
-            }
-        </script>
         
-      </div>
-  </section>
+                document.getElementById('entryCount').textContent = `${visibleCount} entries found`;
+            }
+        
+            function sortTable(column) {
+                const table = document.getElementById('dataTable');
+                const tbody = table.querySelector('tbody');
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+                const direction = sortDirection[column];
+        
+                rows.sort((a, b) => {
+                    const aText = a.querySelector(`td:nth-child(${getColumnIndex(column)})`).textContent.trim();
+                    const bText = b.querySelector(`td:nth-child(${getColumnIndex(column)})`).textContent.trim();
+        
+                    if (column === 'price' || column === 'rating') {
+                        return direction === 'asc' 
+                            ? parseFloat(aText) - parseFloat(bText) 
+                            : parseFloat(bText) - parseFloat(aText);
+                    }
+                });
+        
+                rows.forEach(row => tbody.appendChild(row));
+        
+                // Toggle sort direction for next click
+                sortDirection[column] = direction === 'asc' ? 'desc' : 'asc';
+        
+                // Update sort icons
+                updateSortIcons(column);
+            }
+        
+            function getColumnIndex(column) {
+                switch (column) {
+                    case 'price':
+                        return 2; // Assuming Price is the 2nd column
+                    case 'rating':
+                        return 3; // Assuming Rating is the 3rd column
+                    default:
+                        return 1;
+                }
+            }
+        
+            function updateSortIcons(column) {
+                document.querySelectorAll('.sort-icon').forEach(icon => {
+                    icon.classList.remove('asc', 'desc');
+                });
+        
+                const activeIcon = document.querySelector(`th:contains('${capitalizeFirstLetter(column)}') .sort-icon`);
+                if (activeIcon) {
+                    activeIcon.classList.add(sortDirection[column]);
+                }
+            }
+        
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+        
+            document.addEventListener('DOMContentLoaded', () => {
+                searchTable();
+            });
+        </script>
     
     
 
