@@ -102,17 +102,17 @@ app.post('/user/login', (req, res) => {
 });
 
 app.get('/modelofproduct', (req, res) => {
-  // res.send('Welcome to the new page!');
+
   res.render('modelofproduct/index.ejs',{ products: [], error: null });
 });
 
 app.get('/modelofproduct2', (req, res) => {
-  // res.send('Welcome to the new page!');
+  
   res.render('modelofproduct2/index.ejs');
 });
 
 app.get('/modelofproduct3', (req, res) => {
-  // res.send('Welcome to the new page!');
+  
   res.render('modelofproduct3/index.ejs');
 });
 
@@ -125,19 +125,14 @@ app.post('/modelofproduct/search', async (req, res) => {
   }
 
   try {
-    // Fetch products from both Amazon and Flipkart concurrently
+    
     const [amazonProducts, flipkartProducts, indiaMartProducts] = await Promise.all([
       fetchAmazonProducts(itemName, make, model),
       fetchFlipkartProducts(itemName, make, model),
       fetchIndiaMARTProducts(itemName, make, model)
     ]);
 
-    // Combine the product lists
-    // let products = [...flipkartProducts, ...indiaMartProducts, ...amazonProducts];
-
-    // products = filterAndAnalyzeProducts(itemName, make, model, products)
-
-    // console.log("products after sentiment : ", products);
+    
 
     
     res.redirect("/modelofproduct");
@@ -147,7 +142,7 @@ app.post('/modelofproduct/search', async (req, res) => {
   }
 });
 
-// Route import
+
 import userRouter from "../src/routes/user.routes.js"
 app.use("/user", userRouter);
 
